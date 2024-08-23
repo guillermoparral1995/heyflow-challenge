@@ -1,6 +1,15 @@
+/**
+ * @param pathSegment: string - A segment of the path (e.g. "name", "[0]")
+ * @returns boolean - Whether the path segment is an array index or not
+ */
 export const isArrayIndex = (pathSegment: string) =>
     !isNaN(Number(pathSegment.replace("[", "").replace("]", "")));
 
+/**
+ * @param path: string - A path string (e.g. "name.first", "name[0]")
+ * @param initialObj: any - The initial object to resolve the path on (usually matches the JSON provided as argument)
+ * @returns [any, string] - A tuple containing the resolved value and the resolved path
+ */
 export const resolveValueAndPath = (
     path: string[],
     initialObj: any
@@ -27,6 +36,10 @@ export const resolveValueAndPath = (
     }
 };
 
+/**
+ * @param path: string - A path string (e.g. "name.first", "name[0]")
+ * @returns string[] - An array of path segments
+ */
 export const buildPathArray = (path: string) => {
     return path.split('.').reduce((acc: string[], segment: string) => {
         if (segment.includes("[")) {

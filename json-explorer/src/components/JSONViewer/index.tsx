@@ -3,7 +3,7 @@ import ObjectWrapper from "../ObjectWrapper";
 
 interface JSONViewerProps {
   json: Record<string, any>;
-  onPropClick: (...args: any) => void;
+  onPropClick: (key: string, path: string[]) => void;
 }
 
 const JSONViewer: React.FC<JSONViewerProps> = ({ json, onPropClick }) => {
@@ -38,7 +38,7 @@ const JSONViewer: React.FC<JSONViewerProps> = ({ json, onPropClick }) => {
               }
               onClick={
                 typeof obj[key] !== "object"
-                  ? () => onPropClick(json, key, path)
+                  ? () => onPropClick(key, path)
                   : undefined
               }
             >

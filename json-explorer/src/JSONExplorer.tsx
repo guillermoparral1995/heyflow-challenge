@@ -26,18 +26,15 @@ const JSONExplorer: React.FC<JSONExplorerProps> = ({ json }) => {
     setProperty(resolvedValue?.toString());
   };
 
-  const handlePropClick = useCallback(
-    (obj: any, key: string, path: string[]) => {
-      const completePath = [...path, key];
-      const [resolvedValue, resolvedPath] = resolveValueAndPath(
-        completePath,
-        obj
-      );
-      setProperty(resolvedValue?.toString());
-      setPath(resolvedPath);
-    },
-    []
-  );
+  const handlePropClick = useCallback((key: string, path: string[]) => {
+    const completePath = [...path, key];
+    const [resolvedValue, resolvedPath] = resolveValueAndPath(
+      completePath,
+      jsonObject
+    );
+    setProperty(resolvedValue?.toString());
+    setPath(resolvedPath);
+  }, []);
 
   return (
     <>
