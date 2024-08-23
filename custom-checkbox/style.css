@@ -1,0 +1,39 @@
+#native-checkbox {
+    margin-bottom: 10px;
+}
+
+.checkbox-container {
+    display: inline-block;
+    cursor: pointer;
+    user-select: none;
+}
+
+.checkbox-container:focus {
+    outline: none;
+}
+
+.checkbox-container:focus-visible {
+    outline: none;
+}
+
+.checkbox-container.focused {
+    outline: 1px solid blue;
+    outline-offset: 1px;
+}
+
+.checkbox-container .checkmark {
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border: 1px solid black;
+    border-radius: 2px;
+    display: inline-block;
+}
+
+.checkbox-container.checked .checkmark {
+    background-image: url('./checkmark.svg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: invert(1) 
+}

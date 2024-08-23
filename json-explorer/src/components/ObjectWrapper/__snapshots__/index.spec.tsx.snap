@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ObjectWrapper should match snapshot with children 1`] = `
+<div>
+  <span>
+    {
+  </span>
+  <div
+    class="pl-4"
+  >
+    <ul>
+      <li>
+        Item 1
+      </li>
+      <li>
+        Item 2
+      </li>
+    </ul>
+  </div>
+  <span>
+    }
+  </span>
+</div>
+`;
+
+exports[`ObjectWrapper should render correctly 1`] = `
+<div>
+  <span>
+    {
+  </span>
+  <div
+    class="pl-4"
+  >
+    <ul />
+  </div>
+  <span>
+    }
+  </span>
+</div>
+`;
